@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="body">
+    <button id="blue" onclick="elegirColor(this.id)">Blue</button>
+    <button id="green" onclick="elegirColor(this.id)">Green</button>
+    <button id="yellow" onclick="elegirColor(this.id)">Yellow</button>
+    <button id="red" onclick="elegirColor(this.id)">Red</button>
+    <button id="purple" onclick="elegirColor(this.id)">Purple</button>
+</body>
+</html>
+<script>
+    function elegirColor(id) {
+        switch (id) {
+            case "blue":
+                document.getElementById('body').style.backgroundColor = id;
+            case "green":
+                document.getElementById('body').style.backgroundColor = id;
+            case "yellow":
+                document.getElementById('body').style.backgroundColor = id;
+            case "red":
+                document.getElementById('body').style.backgroundColor = id;
+            case "purple":
+                document.getElementById('body').style.backgroundColor = id;
+        }
+    }
+</script>

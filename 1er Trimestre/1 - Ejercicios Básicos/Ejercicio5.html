@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sumatorios</h1>
+    <script>
+        let number = 0;
+        let plus = 1;
+        let cont = 1;
+
+        while (plus <= 100) {
+            number += plus;
+            document.write(number + ',');
+            cont++;
+            if (cont > 10) {
+                cont = 1;
+                document.write('<br>');
+            }
+            plus++;
+        }
+    </script>
+</body>
+</html>

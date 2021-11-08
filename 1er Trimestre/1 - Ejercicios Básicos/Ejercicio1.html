@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>¿Quién eres tú?</h1>
+    <p id="nombre">Nombre: </p><br>
+    <p id="apellido1">Primer apellido: </p><br>
+    <p id="apellido2">Segundo apellido: </p><br>
+    <p id="resultado"></p>
+</body>
+</html>
+<script>
+    let result = "";
+
+    let name = prompt("¿Cómo te llamas?");
+    document.getElementById('nombre').innerHTML += name;
+    result += name;
+
+    let first = prompt("¿Cuál es tu primer apellido?");
+    document.getElementById('apellido1').innerHTML += first;
+    result += ' ' + first;
+
+    let second = prompt("¿Cuál es tu segundo apellido?");
+    document.getElementById('apellido2').innerHTML += second;
+    result += ' ' + second;
+
+    document.getElementById('resultado').innerHTML = '<strong>' + result + '</strong>';
+</script>

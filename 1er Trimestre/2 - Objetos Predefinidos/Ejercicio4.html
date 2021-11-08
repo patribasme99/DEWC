@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- OBJETO SCREEN -->
+    <div style="border: 1px solid blue; padding: 5px; margin: 5px;">
+        <p><strong>Objeto Screen</strong></p>
+        <script>
+            let width = screen.width;
+            let height = screen.height;
+            document.write('La resolución de la pantalla es de ' + width + 'x' + height);
+        </script>
+    </div>
+
+    <!-- OBJETO NAVIGATOR -->
+    <div style="border: 1px solid red; padding: 5px; margin: 5px;">
+        <p><strong>Objeto Navigator</strong></p>
+        <script>
+            let nav_name = navigator.appName;
+            let sys_name = navigator.oscpu;
+            let nav_version = navigator.appVersion;
+            document.write('El nombre del navegador que usas es: ' + nav_name + '<br>');
+            document.write('Usas el siguiente sistema operativo: ' + sys_name + '<br>');
+            document.write('La versión del navegador que usas es: ' + nav_version);
+        </script>
+    </div>
+
+    <!-- OBJETO DOCUMENT -->
+    <div style="border: 1px solid green; padding: 5px; margin: 5px;">
+        <p><strong>Objeto Document</strong></p>
+        <script>
+            let url_doc = document.location;
+            document.write('La URL del documento es: ' + url_doc);
+        </script>
+    </div>
+
+    <!-- OBJETO LOCATION -->
+    <div style="border: 1px solid yellow; padding: 5px; margin: 5px;">
+        <p><strong>Objeto Location</strong></p>
+        <script>
+            let protocolo = location.protocol;
+            document.write('El protocolo usado para acceder a esta página ha sido: ' + protocolo);
+        </script>
+    </div>
+
+    <script>
+        //MENSAJE EN LA BARRA DE ESTADO (DESHABILITADO)
+        window.status = 'Bienvenido a JavaScript';
+
+        //ABRIR NUEVA VENTANA CON EL NAVEGADOR DE GOOGLE CON CIERTAS CARACTERISTICAS
+        window.open('https://www.google.com/', 'resizable=no, scrollbars= no, toolbar=no, status=no, menubar=yes, width=600px, height=400px, top=50px, left=150px');
+    </script>>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let date1 = new Date();
+        let nombre = prompt('¿Cuál es tu nombre?');
+        let date2 = new Date();
+        let milisecs = date2 - date1;
+        let secs = parseInt(milisecs / 1000);
+        alert(nombre + ' has tardado en escribir tu nombre ' + secs + ' segundos');
+    </script>
+</body>
+</html>

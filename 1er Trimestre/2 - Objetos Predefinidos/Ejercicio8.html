@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="text-align: center;">MANEJANDO CADENAS</h1>
+    <script>
+        let cadena = '¡Hola!';
+        let longitud = cadena.length;
+        document.write('<p>La variable "cadena" contiene el siguiente texto: <strong>' + cadena + '</strong></p>');
+        document.write('<p>Su longitud es de ' + longitud + ' caracteres distribuidos según se indica en la siguiente tabla: </p>');
+        document.write('<table><tr><td style="border: 1px solid black; text-align: center">Posición</td>');
+            for (let i = 0; i < cadena.length; i++) {
+                document.write('<td style="border: 1px solid black; text-align: center">' + i + '</td>');
+            }
+        document.write('</tr><tr><td style="border: 1px solid black; text-align: center">Contenido</td>');
+            for (let i = 0; i < cadena.length; i++) {
+                document.write('<td style="border: 1px solid black; text-align: center">' + cadena[i] + '</td>');
+            }
+        document.write('</tr></table>');
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let fecha = prompt('Introduce tu fecha de nacimiento en formato "aaaa/mm/dd"');
+        let error;
+        let fechaActual = new Date();
+        let fechaNac = new Date(fecha);
+        let invalido = false;
+        let years;
+
+        if (!/^\d{2,4}\/\d{2}\/\d{2}$/.test(fecha)) {
+            error = 'Formato incorrecto para la fecha de nacimiento';    
+            invalido = true;
+        } else {
+            fechaNac = new Date(fecha);
+
+            if (fechaNac > fechaActual) {
+                error = 'La fecha introducida es superior a la actual';
+                invalido = true;
+            } else {
+                let milisecs = fechaActual - fechaNac;
+                let secs = parseInt(milisecs / 1000);
+                years = parseInt(secs / 31557600);
+            }
+        }
+
+        if (invalido) {
+            alert(error);
+        } else {
+            document.write('<p>Has nacido el ' + fechaNac.getDate() + '/' + (fechaNac.getMonth()+1) + '/' + fechaNac.getFullYear() + '</p><br><p>Tienes ' + years + ' años.</p>');
+        }
+    </script>
+</body>
+</html>

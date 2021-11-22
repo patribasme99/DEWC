@@ -8,6 +8,20 @@
 </head>
 <body>
     <h1>MANEJANDO VENTANAS</h1>
-    <label>Nombre y Apellidos </label><input type="text" name="name" /><button id="entrar">Entrar</button>
+    <label>Nombre y Apellidos </label><input type="text" name="name" id="info" /><button id="entrar" onclick="addInfo()">Entrar</button>
 </body>
 </html>
+<script>
+    function addInfo() {
+        let info = document.getElementById('info').value;
+        if (info.length == 0) {
+            alert('No se ha introducido ningún dato.');
+        } else {
+            let y=parseInt((window.screen.height/2)-(300/2));
+            let x=parseInt((window.screen.width/2)-(300/2));
+            let ventana = window.open('', 'Ventana Secundaria', 'height=300, width=300, top=' + y + ', left=' + x + '');
+            ventana.document.write(
+                `<p>Bienvenido ${info}</p><br><button type="button" onclick='window.close();parent.window.opener.location="http://google.com"'>Empezar a navegar</button>`);
+        }
+    }
+</script>

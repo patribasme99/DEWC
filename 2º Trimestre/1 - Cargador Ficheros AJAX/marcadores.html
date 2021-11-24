@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargador ficheros AJAX</title>
+</head>
+<body>
+    <button type="button" onclick="loadJSON()">JSON</button>
+    <div id="container">
+        <table id="tabla"></table>
+    </div>
+</body>
+</html>
+
+<script type="application/javascript">
+    function loadJSON() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                var JSONObject = JSON.parse(xhr.responseText);
+
+                document.getElementById('tabla').innerHTML='<tr><th>Latitud</th>'+
+                '<th>Longitud</th>' + 
+                '<th>Ciudad</th>' + 
+                '<th>Descripción</th>' + 
+                '<th>Ranking</th></tr>';
+
+                for (i = 0; i < JSONObject.length; i++) {
+                    document.getElementById('tabla').innerHTML += '<tr>' + 
+                        '<td align="center" style="dislay: none;">' + JSONObject[i].latitude + '</td>'+
+                        '<td align="center" style="dislay: none;">' + JSONObject[i].longitude + '</td>'+
+                        '<td align="center" style="dislay: none;">' + JSONObject[i].city + '</td>'+
+                        '<td align="center" style="dislay: none;">' + JSONObject[i].description + '</td>'+
+                        '<td align="center" style="dislay: none;">' + JSONObject[i].ranking + '</td>'+'</tr>';
+                }
+            }
+        }
+        xhr.open("GET", "marcadores.JSON", true);
+        xhr.send();
+    }
+</script>
